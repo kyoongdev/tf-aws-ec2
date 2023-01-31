@@ -4,11 +4,7 @@ locals {
     Owner   = "posquit0"
   }
 }
-
-
-###################################################
-# VPC
-###################################################
+## MEMO: VPC
 
 module "vpc" {
   source  = "tedilabs/network/aws//modules/vpc"
@@ -25,10 +21,8 @@ module "vpc" {
   tags = local.common_tags
 }
 
+## MEMO: Subnet Groups
 
-###################################################
-# Subnet Groups
-###################################################
 
 module "subnet_group" {
   source  = "tedilabs/network/aws//modules/subnet-group"
@@ -51,10 +45,8 @@ module "subnet_group" {
   tags = local.common_tags
 }
 
+## MEMO: Route Tables
 
-###################################################
-# Route Tables
-###################################################
 
 module "route_table__public" {
   source  = "tedilabs/network/aws//modules/route-table"

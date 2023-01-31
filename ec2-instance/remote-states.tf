@@ -6,10 +6,7 @@ locals {
   subnet_groups = local.remote_states["network"].subnet_groups
 }
 
-
-###################################################
-# Terraform Remote States (External Dependencies)
-###################################################
+## MEMO: Terraform Remote States (External Dependencies)
 
 data "terraform_remote_state" "network" {
   backend = "local"
